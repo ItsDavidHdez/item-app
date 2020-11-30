@@ -18,5 +18,10 @@
   "devDependencies": {
     "@babel/core": "~7.9.0"
   },
-  "private": true
+  "private": true,
+  "name": "la_maestra",
+  "version": "1.0.0",
+  "description": "Development of a app about items for the company \"La Maestra's\"",
+  "author": "David Vargas Hernandez <david-0610@live.com.mx>",
+  "license": "MIT"
 }
