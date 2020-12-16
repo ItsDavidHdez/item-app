@@ -1,9 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./screens/Login";
+
+const Stack = createStackNavigator();
 
 const MyStack = () => {
   return (
@@ -11,7 +13,7 @@ const MyStack = () => {
       <Stack.Screen
         name="login"
         component={Login}
-        options={{ title: "User List" }}
+        options={{ title: "Login" }}
       />
     </Stack.Navigator>
   );
