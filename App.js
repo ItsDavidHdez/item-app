@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "./screens/Login";
+import Register from "./screens/Register";
 
 const Stack = createStackNavigator();
 
@@ -11,7 +12,12 @@ const MyStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="login"
+        name="Register"
+        component={Register}
+        options={{ title: "Register" }}
+      />
+      <Stack.Screen
+        name="Login"
         component={Login}
         options={{ title: "Login" }}
       />
