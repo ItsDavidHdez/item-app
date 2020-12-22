@@ -14,6 +14,11 @@ const Stack = createStackNavigator();
 const MyStack = () => {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="AddInventory"
+        component={AddInventory}
+        options={{ title: "Agregar Inventario" }}
+      />
       <Stack.Screen name="Home" component={Home} options={{ title: "Home" }} />
       <Stack.Screen
         name="Login"
@@ -24,11 +29,6 @@ const MyStack = () => {
         name="Register"
         component={Register}
         options={{ title: "Registro" }}
-      />
-      <Stack.Screen
-        name="AddInventory"
-        component={AddInventory}
-        options={{ title: "Agregar Inventario" }}
       />
       <Stack.Screen
         name="RemoveInventory"
