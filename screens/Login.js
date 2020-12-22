@@ -7,19 +7,29 @@ import "firebase/auth";
 import Register from "./Register";
 
 const Login = (props) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // console.log(firebase.firestore());
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const email = user.email;
+  const password = user.password;
 
   const loginButton = async () => {
-    console.log(email);
-    // if (email === "") {
-    //   return <Text>Email requerido</Text>;
-    // }
+    console.log(user.email);
     try {
       await firebase.auth().createUserWithEmailAndPassword(email, password);
     } catch (err) {
       console.error(err);
     }
+    if (firebase.auth) {
+      props.navigation.navigate("Home");
+    }
+  };
+
+  const handleChangeText = (name, value) => {
+    setUser({ ...user, [name]: value });
   };
 
   return (
@@ -33,18 +43,17 @@ const Login = (props) => {
         <View style={styles.form}>
           <TextInput
             color="white"
-            value={email}
-            onChangeText={(text) => setEmail(text)}
-            placeholder={email === "" ? "Email requerido" : ""}
+            value={user.email}
+            onChangeText={(text) => handleChangeText("email", text)}
+            // placeholder={user.email === "" ? "Email requerido" : ""}
           />
-          {/* {!email === "" ? <Text>Email vacío</Text> : ""} */}
         </View>
         <Text style={styles.labels}>Password</Text>
         <View style={styles.form}>
           <TextInput
             color="white"
-            value={password}
-            onChangeText={(text) => setPassword(text)}
+            value={user.password}
+            onChangeText={(text) => handleChangeText("password", text)}
             secureTextEntry={true}
           />
         </View>

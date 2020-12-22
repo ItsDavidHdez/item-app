@@ -2,40 +2,54 @@ import React, { useState } from "react";
 import { ScrollView, View, Button, StyleSheet, Text } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 // import { LinearGradient } from "expo-linear-gradient";
-import firebase from "../database/firebase";
-import "firebase/auth";
+import { firebase, db } from "../database/firebase";
+import "firebase/firestore";
 
 const Login = () => {
+  // console.log(firebase.default.auth);
+
+  const db = firebase.firestore();
+
   const [user, setUser] = useState({
     name: "",
     email: "",
     password: "",
     phone: "",
   });
+  const [repeatPassword, setRepearPassword] = useState("");
 
   const authUser = async () => {
     try {
-      await firebase.auth().createUserWithEmailAndPassword(email, password);
+      await firebase
+        .auth()
+        .createUserWithEmailAndPassword(user.email, user.password);
     } catch (err) {
-      console.error(err);
+      console.error("error " + err);
     }
   };
 
   const saveUser = async () => {
     try {
-      await firebase.db.collection("Users").add({
-        name: user.name,
-        email: user.email,
-        password: user.password,
-        phone: user.phone,
-      });
+      await db
+        .collection("users")
+        .add({
+          name: user.name,
+          email: user.email,
+          password: user.password,
+          phone: user.phone,
+        })
+        .then(function (info) {
+          console.log("Document written with ID: ", info.id);
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+        });
       console.log("Guardado");
     } catch (err) {
       console.log(err);
     }
   };
 
-  const repeatPassword = "";
   const AddNewUser = async () => {
     console.log(user);
     if (user.password === "" || user.email === "" || user.email === "") {
