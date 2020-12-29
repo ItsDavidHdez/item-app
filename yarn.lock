@@ -1866,6 +1866,7 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
   integrity sha512-rk4sWFsmtOw8oyx8SD3KSvawwaK7gRBSEIy2TAwURyGt+3TizssXP1r8nx3zY+R7v2vYYHXZ+k2/GULAT/bcaQ==
 
+<<<<<<< HEAD
 "@react-native-firebase/app@^10.3.0":
   version "10.3.0"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-10.3.0.tgz#53bb8125d486d3c7b841c3e6e45316668e4837f1"
@@ -1878,6 +1879,12 @@
   version "10.3.1"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-10.3.1.tgz#fbfd0a0bc9a724e3ff297c83c06c49637bb6409d"
   integrity sha512-K2/c6qVoIVwhsc5r754n4nPmxtk95AuBFMpbZuma/et8mGuq+ZKBVPNH41pOBY9V7Nu+aTqoVdN9vs8yZ/b/og==
+=======
+"@react-native-picker/picker@^1.9.7":
+  version "1.9.7"
+  resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-1.9.7.tgz#1230f1b87dcb4114778b4219de1b39f5e560bbf8"
+  integrity sha512-hwIx1SiqryyYFRFj/3renuU+YhZKW07Mr4TDeMRLSaev6TWQR0IfuUfwQj3H4aBrPt86Vi3buSSuQq2mrU+iAw==
+>>>>>>> 7be141612b9ac5801ff00b8f45aeb7a9c68adb28
 
 "@react-navigation/core@^5.14.4":
   version "5.14.4"

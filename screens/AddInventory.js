@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import {
-  View,
-  ScrollView,
-  Text,
-  Button,
-  StyleSheet,
-  Picker,
-} from "react-native";
+import { View, ScrollView, Text, Button, StyleSheet } from "react-native";
+import Picker from "@react-native-picker/picker";
 
 import { TextInput } from "react-native-gesture-handler";
 
@@ -19,6 +13,18 @@ const Home = (props) => {
     quantity: "",
     unity: "",
   });
+
+  const [unity, setUnity] = useState({
+    piece: "",
+    kg: "",
+    box: "",
+    pound: "",
+    lt: "",
+    gallon: "",
+    mt: "",
+    ft: "",
+  });
+
   return (
     <ScrollView style={styles.container}>
       <View>
@@ -38,6 +44,7 @@ const Home = (props) => {
           <TextInput color="white" />
         </View>
         <Text>Precio. *</Text>
+
         <View>
           <TextInput color="white" />
         </View>
@@ -46,6 +53,16 @@ const Home = (props) => {
           <TextInput color="white" />
         </View>
         <Text>Unidad. *</Text>
+        <Picker
+          selectedValue={this.state.language}
+          style={{ height: 50, width: 100 }}
+          // onValueChange={(itemValue, itemIndex) =>
+          //   this.setState({ language: itemValue })
+          // }
+        >
+          <Picker.Item label="Java" value="java" />
+          <Picker.Item label="JavaScript" value="js" />
+        </Picker>
         <View>
           <TextInput color="white" />
         </View>
